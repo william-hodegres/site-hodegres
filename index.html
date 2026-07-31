@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultoria PostgreSQL | Especialistas em Banco de Dados</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pgblue: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            500: '#336791', // Tom oficial PostgreSQL
+                            600: '#2b5577',
+                            700: '#20405a',
+                            800: '#162b3d',
+                            900: '#0b1620',
+                        },
+                        accent: '#00b4d8'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-pgblue-500 selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-pgblue-500 p-2.5 rounded-xl shadow-lg shadow-pgblue-500/30">
+                        <i class="fa-solid fa-database text-2xl text-white"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold tracking-tight text-white block">PostgreSQL<span class="text-accent">.Consulting</span></span>
+                        <span class="text-xs text-slate-400 font-mono tracking-wider block">DATABASE SPECIALISTS</span>
+                    </div>
+                </div>
+
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#inicio" class="text-slate-300 hover:text-white transition">Início</a>
+                    <a href="#servicos" class="text-slate-300 hover:text-white transition">Serviços</a>
+                    <a href="#contato" class="bg-pgblue-500 hover:bg-pgblue-600 text-white px-5 py-2.5 rounded-lg transition shadow-md hover:shadow-lg font-semibold">
+                        Falar com Especialista
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative py-24 md:py-32 overflow-hidden bg-gradient-to-b from-slate-900 via-pgblue-900/40 to-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="inline-flex items-center space-x-2 bg-pgblue-500/10 border border-pgblue-500/30 text-accent px-4 py-1.5 rounded-full text-sm font-semibold mb-8">
+                    <i class="fa-solid fa-bolt text-xs"></i>
+                    <span>Seu banco de dados rodando na sua melhor performance</span>
+                </div>
+                <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
+                    Respiramos <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-accent">PostgreSQL</span>.
+                </h1>
+                <p class="text-xl sm:text-2xl text-slate-300 font-light mb-8 max-w-3xl mx-auto leading-relaxed">
+                    Garantimos a performance que o seu negócio precisa para crescer sem limites. Especialistas em administração, tuning e infraestrutura de banco de dados. Zero gargalos, segurança máxima e disponibilidade contínua.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="#contato" class="w-full sm:w-auto bg-pgblue-500 hover:bg-pgblue-600 text-white px-8 py-4 rounded-xl text-lg font-bold transition shadow-xl shadow-pgblue-500/25 flex items-center justify-center space-x-3">
+                        <span>Agendar Diagnóstico Gratuito</span>
+                        <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                    <a href="#servicos" class="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 px-8 py-4 rounded-xl text-lg font-semibold transition flex items-center justify-center space-x-2">
+                        <span>Ver Serviços</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Métricas -->
+    <section class="border-y border-slate-800 bg-slate-950/50 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-3xl font-extrabold text-white mb-1">99.99%</div>
+                    <div class="text-xs text-slate-400 uppercase tracking-wider font-mono">Disponibilidade (HA)</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-extrabold text-white mb-1">&lt; 10ms</div>
+                    <div class="text-xs text-slate-400 uppercase tracking-wider font-mono">Foco em Latência</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-extrabold text-white mb-1">Zero</div>
+                    <div class="text-xs text-slate-400 uppercase tracking-wider font-mono">Downtime em Migrações</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-extrabold text-white mb-1">24/7</div>
+                    <div class="text-xs text-slate-400 uppercase tracking-wider font-mono">Monitoramento Proativo</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="py-24 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-mono font-semibold tracking-widest text-accent uppercase mb-3">Especialidades</h2>
+                <p class="text-3xl sm:text-4xl font-bold text-white">Soluções completas para seu ecossistema PostgreSQL</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Bloco 1 -->
+                <div class="bg-slate-800/60 border border-slate-700/60 rounded-2xl p-8 hover:border-pgblue-500/50 transition shadow-lg">
+                    <div class="w-14 h-14 bg-pgblue-500/10 text-accent rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-server"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Infraestrutura, Setup & Migração</h3>
+                    <ul class="space-y-3 text-slate-300 text-sm">
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-accent mt-1 text-xs"></i>
+                            <span><strong>Instalação & Configuração:</strong> Ambientes preparados e otimizados desde o primeiro dia.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-accent mt-1 text-xs"></i>
+                            <span><strong>Migração de Bancos:</strong> Transição segura com mínimo ou zero downtime de outros SGBDs.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-accent mt-1 text-xs"></i>
+                            <span><strong>HA & Disaster Recovery:</strong> Standby, réplicas e planos de recuperação de desastres.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Bloco 2 -->
+                <div class="bg-slate-800/60 border border-slate-700/60 rounded-2xl p-8 hover:border-pgblue-500/50 transition shadow-lg">
+                    <div class="w-14 h-14 bg-pgblue-500/10 text-accent rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-gauge-high"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Otimização, Segurança & Operação</h3>
+                    <ul class="space-y-3 text-slate-300 text-sm">
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-accent mt-1 text-xs"></i>
+                            <span><strong>Tuning & Performance:</strong> Otimização avançada de queries, índices e parâmetros do servidor.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-accent mt-1 text-xs"></i>
+                            <span><strong>Auditoria de Segurança:</strong> Análise de vulnerabilidades, permissões e boas práticas.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-accent mt-1 text-xs"></i>
+                            <span><strong>Monitoramento Ativo:</strong> Acompanhamento contínuo de métricas para antecipação de falhas.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Bloco 3 -->
+                <div class="bg-slate-800/60 border border-slate-700/60 rounded-2xl p-8 hover:border-pgblue-500/50 transition shadow-lg">
+                    <div class="w-14 h-14 bg-pgblue-500/10 text-accent rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Gestão de Conhecimento & Suporte</h3>
+                    <ul class="space-y-3 text-slate-300 text-sm">
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-accent mt-1 text-xs"></i>
+                            <span><strong>Documentação Técnica:</strong> Mapeamento detalhado do ambiente e procedimentos operacionais.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-accent mt-1 text-xs"></i>
+                            <span><strong>Treinamento de Equipes:</strong> Capacitação técnica de infra/devs no uso avançado do Postgres.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-check text-accent mt-1 text-xs"></i>
+                            <span><strong>Suporte Consultivo:</strong> Apoio em decisões de arquitetura e resolução de incidentes.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulário / Contato -->
+    <section id="contato" class="py-24 bg-gradient-to-t from-slate-950 to-slate-900 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-6">Pronto para elevar a performance do seu banco de dados?</h2>
+            <p class="text-slate-300 text-lg mb-8">
+                Agende uma conversa técnica sem compromisso.
+            </p>
+
+            <div class="bg-slate-800/80 p-8 rounded-2xl border border-slate-700 max-w-xl mx-auto text-left shadow-2xl">
+                <form action="#" method="POST" class="space-y-4" onsubmit="alert('Obrigado! Em breve entraremos em contato.'); return false;">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-1">Seu Nome</label>
+                        <input type="text" required placeholder="João Silva" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-pgblue-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-1">E-mail Profissional</label>
+                        <input type="email" required placeholder="joao@suaempresa.com" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-pgblue-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-1">Descreva brevemente sua necessidade</label>
+                        <textarea rows="3" placeholder="Ex: Precisamos de otimização de queries e configuração de réplica..." class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-pgblue-500"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-pgblue-500 hover:bg-pgblue-600 text-white font-bold py-3.5 px-6 rounded-lg transition shadow-lg">
+                        Enviar mensagem / Solicitar contato
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 py-8 border-t border-slate-900 text-center text-slate-500 text-sm">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>© Consultoria PostgreSQL. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

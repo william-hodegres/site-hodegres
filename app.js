@@ -1,8 +1,69 @@
 // Configure a verified contact destination here before using this form for leads.
 const contactEmail = 'contato@hodegres.com';
 const frames = {
-  clusters: {src:'assets/monitor-clusters.webp',name:'clusters',alt:'Visão de clusters do Hodegres.monitor. Interface real com dados fictícios.'},
-  health: {src:'assets/monitor-health.webp',name:'health-check',alt:'Health-check do Hodegres.monitor com indicadores do database. Interface real com dados fictícios.'}
+  "clusters": {
+    "src": "assets/monitor-clusters.webp",
+    "name": "clusters",
+    "category": "CLUSTERS",
+    "title": "A operação em uma visão.",
+    "description": "CPU, memória, disco e conexões. Contexto para identificar onde investigar.",
+    "alt": "Visão de clusters do Hodegres.monitor. Interface real com dados fictícios.",
+    "height": 880
+  },
+  "errors": {
+    "src": "assets/monitor-logs-errors.webp",
+    "name": "logs / erros",
+    "category": "LOGS · ERROS",
+    "title": "Do erro ao contexto.",
+    "description": "Exemplos de chave duplicada, deadlock, timeout e conflitos de transação. Mensagem, aplicação e SQL no mesmo contexto.",
+    "alt": "Logs demonstrativos de erros PostgreSQL, com detalhes de uma chave duplicada, deadlock e timeout. Dados fictícios.",
+    "height": 900
+  },
+  "duration": {
+    "src": "assets/monitor-logs-duration.webp",
+    "name": "logs / duration",
+    "category": "LOGS · DURATION",
+    "title": "Encontre o que está demorando.",
+    "description": "Eventos de duration mostram o tempo registrado no log e a consulta associada. Um ponto de partida para investigar a carga.",
+    "alt": "Logs demonstrativos DURATION com tempos de execução e consultas SQL. Dados fictícios.",
+    "height": 900
+  },
+  "health": {
+    "src": "assets/monitor-health.webp",
+    "name": "health-check / database",
+    "category": "HEALTH-CHECK",
+    "title": "Saúde com histórico.",
+    "description": "Snapshots do database: conexões, cache hit, rollback, distribuição de tuplas e indicadores de I/O.",
+    "alt": "Health-check do database com cache hit, conexões e distribuição de tuplas. Dados fictícios.",
+    "height": 1000
+  },
+  "vacuum": {
+    "src": "assets/monitor-vacuum.webp",
+    "name": "health-check / autovacuum",
+    "category": "AUTOVACUUM",
+    "title": "Manutenção com contexto.",
+    "description": "Tuplas mortas, atividade de atualização e histórico de vacuum ajudam a orientar a revisão de manutenção.",
+    "alt": "Health-check de autovacuum com tabelas, tuplas mortas e histórico de manutenção. Dados fictícios.",
+    "height": 900
+  },
+  "bloat": {
+    "src": "assets/monitor-bloat.webp",
+    "name": "health-check / bloat",
+    "category": "BLOAT DE TABELAS",
+    "title": "Entenda o espaço das tabelas.",
+    "description": "Estimativas de bloat, tamanho do heap e fillfactor para orientar a investigação. Estimativa não é espaço garantido recuperável.",
+    "alt": "Health-check de bloat com estimativas de espaço, heap e fillfactor por tabela. Dados fictícios.",
+    "height": 900
+  },
+  "settings": {
+    "src": "assets/monitor-settings.webp",
+    "name": "health-check / configurações",
+    "category": "CONFIGURAÇÕES",
+    "title": "Configuração também é diagnóstico.",
+    "description": "Compare valores atuais, padrões da versão e contexto de aplicação dos parâmetros. Nenhuma alteração é aplicada pela tela.",
+    "alt": "Health-check de parâmetros PostgreSQL com configuração atual, padrão e contexto de aplicação. Dados fictícios.",
+    "height": 900
+  }
 };
 const tabs = [...document.querySelectorAll('[data-frame]')];
 function selectFrame(tab) {
@@ -10,7 +71,12 @@ function selectFrame(tab) {
   tabs.forEach(item => { item.setAttribute('aria-selected',String(item === tab));item.tabIndex = item === tab ? 0 : -1; });
   const image = document.querySelector('#frame-image');
   image.src = frame.src;image.alt = frame.alt;
-  image.width = 1600;image.height = tab.dataset.frame === 'health' ? 1000 : 880;
+  image.width = 1600;image.height = frame.height;
+  const position = String(tabs.indexOf(tab)+1).padStart(2,'0');
+  document.querySelector('#frame-category').textContent = position+' / '+frame.category;
+  document.querySelector('#frame-title').textContent = frame.title;
+  document.querySelector('#frame-description').textContent = frame.description;
+  document.querySelector('#frame-count').textContent = position+' / '+String(tabs.length).padStart(2,'0');
   document.querySelector('#frame-name').textContent = 'hodegres.monitor / '+frame.name;
   document.querySelector('#frame-panel').setAttribute('aria-labelledby',tab.id);
   const zoom = document.querySelector('#frame-zoom');
@@ -28,6 +94,16 @@ tabs.forEach((tab,index) => {
     event.preventDefault();selectFrame(tabs[next]);tabs[next].focus();
   });
 });
+function moveFrame(direction) {
+  const current = tabs.findIndex(tab => tab.getAttribute('aria-selected') === 'true');
+  selectFrame(tabs[(current+direction+tabs.length)%tabs.length]);
+}
+document.querySelector('#frame-prev').addEventListener('click',() => moveFrame(-1));
+document.querySelector('#frame-next').addEventListener('click',() => moveFrame(1));
+const menu = document.querySelector('.site-menu');
+menu.querySelectorAll('a').forEach(link => link.addEventListener('click',() => {menu.open=false;}));
+document.addEventListener('keydown',event => {if(event.key === 'Escape' && menu.open){menu.open=false;menu.querySelector('summary').focus();}});
+document.addEventListener('click',event => {if(!menu.contains(event.target))menu.open=false;});
 document.querySelectorAll('[data-proposal]').forEach(button => button.addEventListener('click',() => {
   document.querySelector('#interest').value = button.dataset.proposal;
   document.querySelector('#contato').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});

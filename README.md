@@ -22,7 +22,7 @@ Modalidades: diagnóstico PostgreSQL, projeto de evolução e acompanhamento con
 
 ## Telas do produto
 
-As capturas de clusters e health-checks usam a interface real do Hodegres.monitor com dados inteiramente fictícios. São imagens estáticas, identificadas como demonstração. Não contêm informações de clientes e não se conectam ao backend.
+A galeria reúne sete capturas: clusters, logs de erros, logs de duration, status do database, autovacuum, bloat e configurações. As imagens usam a interface real do Hodegres.monitor com dados inteiramente fictícios. São imagens estáticas, identificadas como demonstração. Não contêm informações de clientes e não se conectam ao backend. A navegação superior do monitor fica fora do enquadramento para destacar o conteúdo. A navegação institucional fica recolhida em “Explorar”.
 
 ## Referências técnicas
 

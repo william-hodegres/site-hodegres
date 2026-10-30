@@ -27,3 +27,8 @@
 .frame-number{opacity:.6;font-size:8px;margin-right:5px}
 .gallery-note{margin-top:18px;color:var(--muted);font-size:9px;max-width:700px}
 @media(max-width:700px){.gallery-heading{align-items:start;gap:12px;padding-top:18px}.gallery-heading h3{font-size:17px;max-width:240px}.gallery-count{font-size:8px}.gallery-description{font-size:10px;min-height:76px;margin:14px 0 18px}.gallery-tabs{gap:5px;margin-top:13px}.gallery-tabs>button{font-size:9px;padding:8px 9px}.frame-number{font-size:7px;margin-right:3px}.gallery-note{font-size:8px}.image-arrow{width:36px;height:36px;font-size:17px}.image-arrow.previous{left:8px}.image-arrow.next{right:8px}}
+/* Native dark palette from Hodegres.monitor, confined to product frames. */
+.hero-window,.detail-window{background:#0b111d;border-color:#253247}
+.hero-window .window-bar,.detail-window .window-bar,.hero-window figcaption,.detail-window figcaption{background:#111c2c;color:#acb9cc;border-color:#253247}
+.hero-window .window-dots,.detail-window .window-dots{color:#657185}
+.platform-gallery .detail-window .image-button{background:#0b111d}

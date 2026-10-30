@@ -2,7 +2,7 @@
 const contactEmail = 'contato@hodegres.com';
 const frames = {
   "clusters": {
-    "src": "assets/monitor-clusters.webp",
+    "src": "assets/monitor-clusters-dark-2684ac95a6.webp",
     "name": "clusters",
     "category": "CLUSTERS",
     "title": "A operação em uma visão.",
@@ -11,7 +11,7 @@ const frames = {
     "height": 880
   },
   "errors": {
-    "src": "assets/monitor-logs-errors.webp",
+    "src": "assets/monitor-logs-errors-dark-130f1a6cfb.webp",
     "name": "logs / erros",
     "category": "LOGS · ERROS",
     "title": "Do erro ao contexto.",
@@ -20,7 +20,7 @@ const frames = {
     "height": 900
   },
   "duration": {
-    "src": "assets/monitor-logs-duration.webp",
+    "src": "assets/monitor-logs-duration-dark-75e8d79357.webp",
     "name": "logs / duration",
     "category": "LOGS · DURATION",
     "title": "Encontre o que está demorando.",
@@ -29,7 +29,7 @@ const frames = {
     "height": 900
   },
   "health": {
-    "src": "assets/monitor-health.webp",
+    "src": "assets/monitor-health-dark-8a91b6f6ad.webp",
     "name": "health-check / database",
     "category": "HEALTH-CHECK",
     "title": "Saúde com histórico.",
@@ -38,7 +38,7 @@ const frames = {
     "height": 1000
   },
   "vacuum": {
-    "src": "assets/monitor-vacuum.webp",
+    "src": "assets/monitor-vacuum-dark-f15e6f6d2f.webp",
     "name": "health-check / autovacuum",
     "category": "AUTOVACUUM",
     "title": "Manutenção com contexto.",
@@ -47,7 +47,7 @@ const frames = {
     "height": 900
   },
   "bloat": {
-    "src": "assets/monitor-bloat.webp",
+    "src": "assets/monitor-bloat-dark-dbd2892429.webp",
     "name": "health-check / bloat",
     "category": "BLOAT DE TABELAS",
     "title": "Entenda o espaço das tabelas.",
@@ -56,7 +56,7 @@ const frames = {
     "height": 900
   },
   "settings": {
-    "src": "assets/monitor-settings.webp",
+    "src": "assets/monitor-settings-dark-324cd61ac1.webp",
     "name": "health-check / configurações",
     "category": "CONFIGURAÇÕES",
     "title": "Configuração também é diagnóstico.",
